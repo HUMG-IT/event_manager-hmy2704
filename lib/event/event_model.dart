@@ -1,8 +1,6 @@
 
 import 'dart:convert';
 
-import 'package:intl/intl.dart';
-
 class EventModel {
   String? id;
   DateTime startTime;
@@ -15,8 +13,8 @@ class EventModel {
     this.id,
     required this.startTime,
     required this.endTime,
-    this.isAllDay = false,//mặc định
-    this.subject = '',
+     this.isAllDay = false,//mac dinh
+     this.subject = '',
     this.notes,
     this.recurrenceRule,
   });
@@ -99,9 +97,7 @@ class EventModel {
       recurrenceRule.hashCode;
   }
 }
-
 extension ExtEventModel on EventModel {
-  String get formatedStartTimeString => '${startTime.hour}: ${startTime.minute},${startTime.day} / ${startTime.month}/ ${startTime.year}';
-  String get formatedEndTimeString =>  '${endTime.hour}: ${endTime.minute},${endTime.day} / ${endTime.month}/ ${endTime.year}';
+  String get formatedStartTimeString => '${startTime.hour}:${startTime.minute}, ${startTime.day}/${startTime.month}/${startTime.year}';
+  String get formatedEndTimeString =>  '${endTime.hour}:${endTime.minute}, ${endTime.day}/${endTime.month}/${endTime.year}';
 }
-
